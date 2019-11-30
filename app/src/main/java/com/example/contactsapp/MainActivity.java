@@ -2,6 +2,7 @@ package com.example.contactsapp;
 
 import android.os.Bundle;
 
+import com.example.contactsapp.contacts.ContactListContent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -12,7 +13,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ContactFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                AddNewContact();
             }
         });
+
     }
 
     @Override
@@ -51,5 +52,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onListFragmentClickInteraction(ContactListContent.Contact contact, int position) {
+
+    }
+
+    @Override
+    public void onListFragmentLongClickInteraction(int position) {
+
+    }
+
+    public void AddNewContact()
+    {
+
+        ((ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment)).notifyDataChange();
     }
 }
