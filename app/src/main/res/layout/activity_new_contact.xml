@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewContactActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEditBox"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:hint="@string/name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/surnameEditBox"
+        android:inputType="textPersonName"
+        android:layout_margin="10dp"
+        android:hint="@string/surname"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditBox"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateEditBox"
+        android:inputType="date"
+        android:layout_margin="10dp"
+        android:hint="@string/birthday"
+        app:layout_constraintTop_toBottomOf="@+id/surnameEditBox"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneEditBox"
+        android:inputType="phone"
+        android:layout_margin="10dp"
+        android:hint="@string/phone_number"
+        app:layout_constraintTop_toBottomOf="@+id/dateEditBox"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/soundSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditBox"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/soundSpinner" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

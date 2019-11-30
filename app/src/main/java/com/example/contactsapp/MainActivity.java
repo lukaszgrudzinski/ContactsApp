@@ -1,5 +1,6 @@
 package com.example.contactsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.contactsapp.contacts.ContactListContent;
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
     public void AddNewContact()
     {
         ContactFragment contactFragment = (ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment);
+        Intent myIntent = new Intent(MainActivity.this, NewContactActivity.class);
+       // myIntent.putExtra("key", value); //Optional parameters
+        MainActivity.this.startActivity(myIntent);
 
     }
 }
