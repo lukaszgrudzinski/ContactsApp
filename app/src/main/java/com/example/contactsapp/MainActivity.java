@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
 
     public void AddNewContact()
     {
+        ContactFragment contactFragment = (ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment);
 
-        ((ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment)).notifyDataChange();
     }
 }
