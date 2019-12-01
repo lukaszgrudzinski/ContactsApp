@@ -5,13 +5,14 @@
     <string name="surname">Surname</string>
     <string name="birthday">Birthday</string>
     <string name="phone_number">Phone number</string>
-    <string name="invalid_date_toast_msg">Please provide birthday in DD.MM format</string>
+    <string name="invalid_date_toast_msg">Please provide birthday in DD.MM.YYYY format</string>
     <string name="empty_name_msg">Name should not be empty</string>
     <string name="phone_number_invalid_msg">Phone number should be at least 6 characters long</string>
     <string-array name="ringtones">
         <item>ringtone 1</item>
         <item>ringtone 2</item>
         <item>ringtone 3</item>
+        <item>ringtone 4</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -19,4 +20,8 @@
     <string name="phone_number_info">Phone Number: </string>
     <string name="birthday_info">Birthday: </string>
     <string name="sound_info">Contact sound: </string>
+    <string name="delete_msg">Are you sure you want to delete this contact?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_dialog_tag">Delete Dialog</string>
 </resources>

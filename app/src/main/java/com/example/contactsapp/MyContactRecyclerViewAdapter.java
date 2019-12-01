@@ -56,6 +56,13 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
                 }
             }
         });
+        holder.mView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mListener.onListFragmentLongClickInteraction(holder.mItem,position);
+                return true;
+            }
+        });
     }
 
 

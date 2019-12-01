@@ -91,7 +91,7 @@ public class ContactFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentClickInteraction(ContactListContent.Contact contact, int position);
-        void onListFragmentLongClickInteraction(int position);
+        void onListFragmentLongClickInteraction(ContactListContent.Contact contact,int position);
 
     }
 }

@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import com.example.contactsapp.contacts.ContactListContent;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeParseException;
 import java.util.Random;
 
 import static org.apache.commons.validator.GenericValidator.isDate;
@@ -29,8 +27,6 @@ public class NewContactActivity extends AppCompatActivity {
         EditText surnameBox = findViewById(R.id.surnameEditBox);
         EditText dateBox = findViewById(R.id.dateEditBox);
         EditText phoneBox = findViewById(R.id.phoneEditBox);
-        Spinner ringtoneSpinner = findViewById(R.id.soundSpinner);
-
 
         if (ValidateFields(nameBox, dateBox, phoneBox)) return;
 
@@ -38,9 +34,15 @@ public class NewContactActivity extends AppCompatActivity {
                 nameBox.getText().toString()+ " "+ surnameBox.getText().toString(),
                 phoneBox.getText().toString(),
                 dateBox.getText().toString(),
-                getRandomAvatar()));
+                getRandomAvatar(), getSoundId()));
         finish();
     }
+
+    private int getSoundId() {
+        Spinner ringtoneSpinner = findViewById(R.id.soundSpinner);
+        return ringtoneSpinner.getSelectedItemPosition()+R.raw.audio1;
+    }
+
 
     private boolean ValidateFields(EditText nameBox, EditText dateBox, EditText phoneBox) {
         if(nameBox.getText().toString().trim().isEmpty())
@@ -62,7 +64,7 @@ public class NewContactActivity extends AppCompatActivity {
     }
 
     public boolean isDateValid(String dateStr) {
-        return isDate(dateStr.trim(),"DD.MM",true);
+        return isDate(dateStr.trim(),"DD.MM.yyyy",true);
     }
 
     private int getRandomAvatar() {

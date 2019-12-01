@@ -6,7 +6,6 @@ import android.os.Parcelable;
 import com.example.contactsapp.R;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,16 +51,7 @@ public class ContactListContent {
     public static int Id=0;
 
     private static Contact createDummyItem(int position) {
-        return new Contact( "Person " + position, "+48604603172","13.09.1995", R.drawable.user3 +Id);
-    }
-
-    private static String makeDetails(int position) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
-        return builder.toString();
+        return new Contact( "Person " + position, "+48604603172","13.09.1995", R.drawable.user3 +Id, R.raw.audio1+Id);
     }
 
     public static class Contact implements Parcelable {
@@ -70,8 +60,10 @@ public class ContactListContent {
         public final String phoneNumber;
         public final String birthday;
         public final int picId;
+        public final int soundId;
 
-        public Contact(String name, String phoneNumber, String birthday, int picId) {
+        public Contact(String name, String phoneNumber, String birthday, int picId, int soundId) {
+            this.soundId = soundId;
             this.id = Id++;
             this.name = name;
             this.phoneNumber = phoneNumber;
@@ -85,6 +77,7 @@ public class ContactListContent {
             phoneNumber = in.readString();
             birthday = in.readString();
             picId = in.readInt();
+            soundId = in.readInt();
         }
 
         public static final Creator<Contact> CREATOR = new Creator<Contact>() {
@@ -116,6 +109,7 @@ public class ContactListContent {
             dest.writeString(phoneNumber);
             dest.writeString(birthday);
             dest.writeInt(picId);
+            dest.writeInt(soundId);
         }
     }
 }

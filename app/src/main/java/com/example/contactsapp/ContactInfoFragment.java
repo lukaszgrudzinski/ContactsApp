@@ -2,6 +2,7 @@ package com.example.contactsapp;
 
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -58,8 +59,14 @@ public class ContactInfoFragment extends Fragment {
         ContactName.setText(contact.name);
         ContactNumber.setText(getString(R.string.phone_number_info)+" "+contact.phoneNumber);
         ContactBirthday.setText(getString(R.string.birthday_info)+" "+contact.birthday);
-        ContactSound.setText(getString(R.string.sound_info));
+        ContactSound.setText(getString(R.string.sound_info)+" "+getNameOfSound(contact.soundId));
         ((ImageView) activity.findViewById(R.id.contactImage)).setImageDrawable(activity.getResources().getDrawable(contact.picId));
     }
 
+    private String getNameOfSound(int soundId)
+    {
+        Resources res = getResources();
+        String[] ringtones = res.getStringArray(R.array.ringtones);
+        return ringtones[ringtones.length-(2-soundId+R.raw.audio3)];
+    }
 }
