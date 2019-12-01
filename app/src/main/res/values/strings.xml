@@ -5,6 +5,9 @@
     <string name="surname">Surname</string>
     <string name="birthday">Birthday</string>
     <string name="phone_number">Phone number</string>
+    <string name="invalid_date_toast_msg">Please provide birthday in DD.MM format</string>
+    <string name="empty_name_msg">Name should not be empty</string>
+    <string name="phone_number_invalid_msg">Phone number should be at least 6 characters long</string>
     <string-array name="ringtones">
         <item>drawable 1</item>
         <item>drawable 2</item>

@@ -35,11 +35,13 @@ public class ContactListContent {
 
     public static void addItem(Contact item) {
         ITEMS.add(item);
-        ITEM_MAP.put(item.id, item);
+        ITEM_MAP.put(Integer.toString(item.id), item);
     }
 
+    public static int Id=0;
+
     private static Contact createDummyItem(int position) {
-        return new Contact(String.valueOf(position), "Item " + position, makeDetails(position),new Date().toString(),"drawable/user0");
+        return new Contact( "Item " + position, makeDetails(position),new Date().toString(),"drawable/user0");
     }
 
     private static String makeDetails(int position) {
@@ -52,14 +54,14 @@ public class ContactListContent {
     }
 
     public static class Contact {
-        public final String id;
+        public final int id;
         public final String name;
         public final String phoneNumber;
         public final String birthday;
         public final String picPath;
 
-        public Contact(String id, String name, String phoneNumber, String birthday, String picPath) {
-            this.id = id;
+        public Contact(String name, String phoneNumber, String birthday, String picPath) {
+            this.id = Id++;
             this.name = name;
             this.phoneNumber = phoneNumber;
             this.birthday = birthday;
