@@ -34,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
     }
 
     @Override
+    public void onResume(){
+        super.onResume();
+        (( ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment)).notifyDataChange();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -67,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
 
     public void AddNewContact()
     {
-        ContactFragment contactFragment = (ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment);
         Intent myIntent = new Intent(MainActivity.this, NewContactActivity.class);
        // myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);

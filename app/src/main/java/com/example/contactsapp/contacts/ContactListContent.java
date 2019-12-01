@@ -39,7 +39,7 @@ public class ContactListContent {
     }
 
     private static Contact createDummyItem(int position) {
-        return new Contact(String.valueOf(position), "Item " + position, makeDetails(position),new Date(),"drawable/user0");
+        return new Contact(String.valueOf(position), "Item " + position, makeDetails(position),new Date().toString(),"drawable/user0");
     }
 
     private static String makeDetails(int position) {
@@ -55,10 +55,10 @@ public class ContactListContent {
         public final String id;
         public final String name;
         public final String phoneNumber;
-        public final Date birthday;
+        public final String birthday;
         public final String picPath;
 
-        public Contact(String id, String name, String phoneNumber, Date birthday, String picPath) {
+        public Contact(String id, String name, String phoneNumber, String birthday, String picPath) {
             this.id = id;
             this.name = name;
             this.phoneNumber = phoneNumber;

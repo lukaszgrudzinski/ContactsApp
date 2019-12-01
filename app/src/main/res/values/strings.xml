@@ -5,4 +5,9 @@
     <string name="surname">Surname</string>
     <string name="birthday">Birthday</string>
     <string name="phone_number">Phone number</string>
+    <string-array name="ringtones">
+        <item>drawable 1</item>
+        <item>drawable 2</item>
+        <item>drawable 3</item>
+    </string-array>
 </resources>

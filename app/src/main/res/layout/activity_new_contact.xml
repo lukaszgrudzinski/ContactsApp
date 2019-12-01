@@ -46,12 +46,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/soundSpinner"
+        android:entries="@array/ringtones"
+        android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@+id/phoneEditBox"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/buttonAddNewContact"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:onClick="AddNewContact"
         android:text="ADD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
