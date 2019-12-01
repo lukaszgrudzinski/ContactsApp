@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity
     }
     private void displayTaskFragment(ContactListContent.Contact contact)
     {
-        ContactInfoFragment contactInfoFragment = ((ContactInfoFragment) getSupportFragmentManager().findFragmentById(R.id.displayFragment));
+        ContactInfoFragment contactInfoFragment = ((ContactInfoFragment) getSupportFragmentManager().findFragmentById(R.id.contactInfoFragment));
         if(contactInfoFragment!=null)
             contactInfoFragment.displayContact(contact);
     }
