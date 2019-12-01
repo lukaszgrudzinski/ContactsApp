@@ -9,8 +9,14 @@
     <string name="empty_name_msg">Name should not be empty</string>
     <string name="phone_number_invalid_msg">Phone number should be at least 6 characters long</string>
     <string-array name="ringtones">
-        <item>drawable 1</item>
-        <item>drawable 2</item>
-        <item>drawable 3</item>
+        <item>ringtone 1</item>
+        <item>ringtone 2</item>
+        <item>ringtone 3</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello Name</string>
+    <string name="phone_number_info">Phone Number: </string>
+    <string name="birthday_info">Birthday: </string>
+    <string name="sound_info">Contact sound: </string>
 </resources>

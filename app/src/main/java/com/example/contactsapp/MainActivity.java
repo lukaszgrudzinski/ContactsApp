@@ -9,12 +9,16 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 public class MainActivity extends AppCompatActivity implements ContactFragment.OnListFragmentInteractionListener {
+
+    public static final String contactExtra = "contactExtra";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +51,8 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onListFragmentClickInteraction(ContactListContent.Contact contact, int position) {
-
+        startInfoActivity(contact,position);
     }
 
     @Override
@@ -77,5 +66,18 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
        // myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);
 
+    }
+
+    public void DeleteContact(View view)
+    {
+        ContactListContent.RemoveItem(0);
+        (( ContactFragment) getSupportFragmentManager().findFragmentById(R.id.contactFragment)).notifyDataChange();
+    }
+
+    private void startInfoActivity(ContactListContent.Contact contact, int position)
+    {
+        Intent intent = new Intent(this, ContactInfoActivity.class);
+        intent.putExtra(contactExtra,contact);
+        startActivity(intent);
     }
 }

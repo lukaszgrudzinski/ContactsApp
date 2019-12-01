@@ -14,10 +14,10 @@
         android:layout_margin="@dimen/text_margin"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user0" />
+
     <TextView
         android:id="@+id/content"
         android:layout_width="0dp"
@@ -32,11 +32,16 @@
         tools:text="@tools:sample/date/ddmmyy"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_delete"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="@null"
+        android:scaleType="centerInside"
+        android:tint="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:src="@android:drawable/ic_menu_delete" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        android:onClick="DeleteContact" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

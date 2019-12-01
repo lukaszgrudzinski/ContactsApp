@@ -12,6 +12,7 @@ import com.example.contactsapp.contacts.ContactListContent;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.Random;
 
 import static org.apache.commons.validator.GenericValidator.isDate;
 
@@ -37,7 +38,7 @@ public class NewContactActivity extends AppCompatActivity {
                 nameBox.getText().toString()+ " "+ surnameBox.getText().toString(),
                 phoneBox.getText().toString(),
                 dateBox.getText().toString(),
-                ""));
+                getRandomAvatar()));
         finish();
     }
 
@@ -62,5 +63,31 @@ public class NewContactActivity extends AppCompatActivity {
 
     public boolean isDateValid(String dateStr) {
         return isDate(dateStr.trim(),"DD.MM",true);
+    }
+
+    private int getRandomAvatar() {
+        switch (new Random(System.currentTimeMillis()).nextInt(10)) {
+            case 0:
+                return R.drawable.user0;
+            case 1:
+                return R.drawable.user1;
+            case 2:
+                return R.drawable.user2;
+            case 3:
+                return R.drawable.user3;
+            case 4:
+                return R.drawable.user4;
+            case 5:
+                return R.drawable.user5;
+            case 6:
+                return R.drawable.user6;
+            case 7:
+                return R.drawable.user7;
+            case 8:
+                return R.drawable.user8;
+            case 9:
+            default:
+                return R.drawable.user9;
+        }
     }
 }
